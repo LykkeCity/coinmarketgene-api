@@ -5,11 +5,11 @@ namespace cmg_hosting_api.Controllers
     [Route("/api/[controller]")]
     public class ExchangesController : Controller
     {
-        
+
         [HttpGet("/api/[controller]/list")]
         public IActionResult Index()
         {
-            var result = new[]
+            var items = new[]
             {
                 new
                 {
@@ -24,7 +24,10 @@ namespace cmg_hosting_api.Controllers
             };
 
 
-            return Json(result);
+            return Json(new
+            {
+                items
+            });
         }
     }
 }
